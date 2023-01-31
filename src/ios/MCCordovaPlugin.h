@@ -37,6 +37,7 @@
 - (void)logSdkState:(CDVInvokedUrlCommand *)command;
 
 - (void)getSystemToken:(CDVInvokedUrlCommand *)command;
+- (void)setSystemToken:(CDVInvokedUrlCommand *)command;
 - (void)isPushEnabled:(CDVInvokedUrlCommand *)command;
 - (void)enablePush:(CDVInvokedUrlCommand *)command;
 - (void)disablePush:(CDVInvokedUrlCommand *)command;

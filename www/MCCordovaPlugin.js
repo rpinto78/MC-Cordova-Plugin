@@ -116,6 +116,21 @@ var MCCordovaPlugin = {
         _exec(successCallback, errorCallback, 'getSystemToken');
     },
     /**
+     * Sends the device token to Marketing Cloud.
+     * @param  {string} deviceToken - The value to be sent as the device token of
+     *     the device.
+     * @param  {function(saved)} [successCallback]
+     * @param  {boolean} successCallback.saved - Whether the value passed in for
+     *     `deviceToken` was saved in the registration.
+     * @param  {function} [errorCallback]
+     * @see  {@link https://salesforce-marketingcloud.github.io/MarketingCloudSDK-Android/javadocs/6.0/reference/com/salesforce/marketingcloud//messages/push/PushMessageManager.html#setPushToken(java.lang.String)|Android Docs}
+     * @see  {@link https://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS/appledoc/Classes/MarketingCloudSDK.html#//api/name/sfmc_deviceToken:|iOS Docs}
+     */
+    setSystemToken: function(deviceToken, successCallback, errorCallback) {
+        argsCheck.checkArgs('sFF', `${PLUGIN_NAME}.setSystemToken`, arguments);
+        _exec(successCallback, errorCallback, 'setSystemToken', [deviceToken]);
+    },
+    /**
      * Returns the maps of attributes set in the registration.
      * @param  {function(attributes)} successCallback
      * @param  {Object.<string, string>} successCallback.attributes - The

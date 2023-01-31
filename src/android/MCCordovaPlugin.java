@@ -281,6 +281,8 @@ public class MCCordovaPlugin extends CordovaPlugin implements UrlHandler {
         switch (action) {
             case "getSystemToken":
                 return getSystemToken();
+            case "setSystemToken":
+                return setSystemToken();
             case "isPushEnabled":
                 return isPushEnabled();
             case "enablePush":
@@ -449,6 +451,18 @@ public class MCCordovaPlugin extends CordovaPlugin implements UrlHandler {
                 callbackContext.success(sdk.getPushMessageManager().getPushToken());
             }
         };
+    }
+
+    private ActionHandler setSystemToken() {
+         return new ActionHandler() {
+             @Override
+             public void execute(
+                 MarketingCloudSdk sdk, JSONArray args, CallbackContext callbackContext) {
+                 String deviceToken = args.optString(0, null);
+                 sdk.getPushMessageManager().setPushToken(deviceToken);
+                 callbackContext.success();
+             }
+         };
     }
 
     private ActionHandler logSdkState() {
