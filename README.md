@@ -66,6 +66,7 @@ Follow [these instructions](./ios_push.md) to enable push for iOS.
         * [.enablePush([successCallback], [errorCallback])](#module_MCCordovaPlugin.enablePush)
         * [.disablePush([successCallback], [errorCallback])](#module_MCCordovaPlugin.disablePush)
         * [.getSystemToken(successCallback, [errorCallback])](#module_MCCordovaPlugin.getSystemToken)
+        * [.setSystemToken(deviceToken, successCallback, [errorCallback])](#module_MCCordovaPlugin.setSystemToken)
         * [.getAttributes(successCallback, [errorCallback])](#module_MCCordovaPlugin.getAttributes)
         * [.setAttribute(key, value, [successCallback], [errorCallback])](#module_MCCordovaPlugin.setAttribute)
         * [.clearAttribute(key, [successCallback], [errorCallback])](#module_MCCordovaPlugin.clearAttribute)
@@ -200,6 +201,32 @@ MCCordovaPlugin.getSystemToken(function(token) {
 | successCallback | <code>function</code> |  |
 | successCallback.token | <code>string</code> | The token used for push     messaging. |
 | [errorCallback] | <code>function</code> |  |
+
+<a name="module_MCCordovaPlugin.setSystemToken"></a>
+
+### MCCordovaPlugin.setSystemToken(deviceToken, successCallback, [errorCallback])
+Sends the device token to Marketing Cloud.
+
+**Kind**: static method of [<code>MCCordovaPlugin</code>](#module_MCCordovaPlugin)  
+
+**Example**
+```js
+MCCordovaPlugin.setSystemToken(deviceToken, function(success) {
+    //TODO - returns success or error
+});
+```
+**See**
+
+- [Android Docs](https://salesforce-marketingcloud.github.io/MarketingCloudSDK-Android/javadocs/6.0/reference/com/salesforce/marketingcloud/messages/push/PushMessageManager.html#getPushToken())
+- [iOS Docs](https://salesforce-marketingcloud.github.io/MarketingCloudSDK-iOS/appledoc/Classes/MarketingCloudSDK.html#//api/name/sfmc_deviceToken)
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| deviceToken | <code>string</code> | The device token to send to Marketinkgcloud |
+| successCallback | <code>function</code> |  |
+| [errorCallback] | <code>function</code> |  |
+
 
 <a name="module_MCCordovaPlugin.getAttributes"></a>
 
